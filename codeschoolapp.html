@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+  <title>Flatlanders' Store</title>
+</head>
+<body ng-app="store" ng-controller="StoreController as store" >
+  {{"Welcome"}}
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="product in store.products" ng-hide="product.soldOut">
+      <h3>
+        {{product.name}}
+        <em class="pull-right">{{product.price | currency}}</em>
+        <!-- Image Gallery  -->
+        <div class="gallery" ng-show="product.images.length" ng-controller="GalleryController as gallery">
+          <img ng-src="{{product.images[gallery.current].full}}" alt="product image" />
+          <ul class="list-inline thumbs">
+            <li class="thumbnail" ng-repeat="image in product.images">
+              <img ng-src="{{image.thumb}}" />
+            </li>
+          </ul>
+        </div>
+      </h3>
+      <section ng-controller="PanelController as panel">
+        <ul class="nav nav-pills">
+          <li ng-class="{ active: panel.isSelected(1) }">
+            <a href ng-click="panel.selectTab(1)">Description</a>
+          </li>
+          <li ng-class="{ active: panel.isSelected(2) }">
+            <a href ng-click="panel.selectTab(2)">Specifications</a>
+          </li>
+          <li ng-class="{ active: panel.isSelected(3) }">
+            <a href ng-click="panel.selectTab(3)">Reviews</a>
+          </li>
+        </ul>
+        <div class="panel" ng-show="panel.isSelected(1)">
+          <h4>Description</h4>
+          <p>{{product.description}}</p>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(2)">
+          <h4>Specifications</h4>
+          <p><strong>Shine: </strong>{{product.shine}}</p>
+          <p><strong>Rarity: </strong>{{product.rarity}}</p>
+          <p><strong>Faces: </strong>{{product.faces}}</p>
+          <div ng-style="{'background-color': '{{product.color}}'}"><strong>Color</strong></div>
+        </div>
+        <div class="panel" ng-show="panel.isSelected(3)">
+          <h4>Reviews</h4>
+          <li ng-repeat="review in product.reviews">
+            <blockquote>
+              <strong>{{review.stars}} Stars</strong>
+              {{review.body}}
+              <cite class="clearfix">—{{review.author}}</cite>
+            </blockquote>
+          </li>
+          <form name="reviewForm">
+            <blockquote>
+              <strong>Stars: {{review.stars}}</strong>
+              {{review.body}}
+              <cite class="clearfix">-{{review.author}}</cite>
+            </blockquote>
+            <select ng-model="review.stars">
+              <option value="1">1 star</option>
+              <option value="2">2 stars</option>
+              <option value="3">3 stars</option>
+            </select>
+            <textarea rows="8" cols="40" ng-model="review.body"></textarea>
+            <label for="email"></label>
+            <input name="email" type="email" ng-model="review.author">
+            <input type="submit" name="submit" value="Submit Review">
+          </form>
+        </div>
+      </section>
+    </li>
+  </ul>
+  <!--<div ng-repeat="product in store.products">
+    <div ng-hide="store.product.soldOut">
+      <h1> {{product.name}} </h1>
+      <h2> ${{product.price}}</h2>
+      <p> {{product.description}} </p>
+      <button type="button" name="button" ng-show="product.canPurchase">Add to cart</button>
+    </div>
+  </div> -->
+
+  <!-- Imports -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+  charset="utf-8"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"
+   charset="utf-8">
+  ></script>
+  <!-- Local Files-->
+  <script type="text/javascript" src="js/codeschoolapp.js" charset="utf-8"></script>
+</body>
+</html>
