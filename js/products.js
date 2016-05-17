@@ -54,7 +54,7 @@
           this.review = {};
         };
       },
-      controllerAs: "review"
+      controllerAs: "reviewCtrl"
     };
   });
 
