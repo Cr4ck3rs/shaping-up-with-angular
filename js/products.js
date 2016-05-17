@@ -44,7 +44,6 @@
 
   store.directive("productReviewForm", function(){
     return {
-      scope: true,
       restrict: 'E',
       templateUrl: "product-review-form.html",
       controller: function(){
@@ -57,8 +56,7 @@
           this.reviewForm.$setPristine();
         };
       },
-      controllerAs: "reviewCtrl",
-      bindToController: true
+      controllerAs: "reviewCtrl"
     };
   });
 
