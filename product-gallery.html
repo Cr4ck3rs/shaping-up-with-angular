@@ -2,8 +2,8 @@
   <div class="img-wrap">
     <img ng-src="{{product.images[gallery.current].full}}" alt="product image" />
   </div>
-  <ul class="list-inline thumbs">
-    <li class="thumbnail" ng-repeat="image in product.images">
+  <ul class="img-thumbnails clearfix">
+    <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
       <img ng-src="{{image.thumb}}" />
     </li>
   </ul>
