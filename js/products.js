@@ -52,7 +52,7 @@
           this.review.createdOn = Date.now();
           product.reviews.push(this.review);
           this.review = {};
-          this.reviewForm.$setPristine();
+          $("#reviewForm").$setPristine();
         };
       },
       controllerAs: "reviewCtrl"
