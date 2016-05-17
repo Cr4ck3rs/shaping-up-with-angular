@@ -1,3 +1,6 @@
+
+var vm = this;
+
 (function(){
   var store = angular.module('store-products', []);
 
@@ -52,7 +55,7 @@
           this.review.createdOn = Date.now();
           product.reviews.push(this.review);
           this.review = {};
-          $("#reviewForm").$setPristine();
+          vm.reviewForm.$setPristine();
         };
       },
       controllerAs: "reviewCtrl"
