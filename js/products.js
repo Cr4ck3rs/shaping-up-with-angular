@@ -42,8 +42,9 @@
     };
   });
 
-  store.directive("productReviewForm", ["$scope", function($scope){
+  store.directive("productReviewForm", function(){
     return {
+      scope: true,
       restrict: 'E',
       templateUrl: "product-review-form.html",
       controller: function(){
@@ -53,12 +54,13 @@
           this.review.createdOn = Date.now();
           product.reviews.push(this.review);
           this.review = {};
-          $scope.reviewForm.$setPristine();
+          this.reviewForm.$setPristine();
         };
       },
-      controllerAs: "reviewCtrl"
+      controllerAs: "reviewCtrl",
+      bindToController: true
     };
-  }]);
+  });
 
   store.directive("productTitle", function(){
     return {
