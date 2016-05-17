@@ -1,6 +1,4 @@
 
-var vm = this;
-
 (function(){
   var store = angular.module('store-products', []);
 
@@ -44,7 +42,7 @@ var vm = this;
     };
   });
 
-  store.directive("productReviewForm", function(){
+  store.directive("productReviewForm", ["$scope", function($scope){
     return {
       restrict: 'E',
       templateUrl: "product-review-form.html",
@@ -55,12 +53,12 @@ var vm = this;
           this.review.createdOn = Date.now();
           product.reviews.push(this.review);
           this.review = {};
-          vm.reviewForm.$setPristine();
+          $scope.reviewForm.$setPristine();
         };
       },
       controllerAs: "reviewCtrl"
     };
-  });
+  }]);
 
   store.directive("productTitle", function(){
     return {
