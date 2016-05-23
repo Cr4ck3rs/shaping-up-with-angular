@@ -1,23 +1,26 @@
 <form name="reviewCtrl.reviewForm" ng-submit="reviewCtrl.reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 <blockquote>
-  <strong>Stars: {{reviewCtrl.review.stars}}</strong>
-  {{reviewCtrl.review.body}}
-  <cite class="clearfix">-{{reviewCtrl.review.author}}</cite>
+  <strong>Stars: {{::reviewCtrl.review.stars}}</strong>
+  <span ng-bind="::reviewCtrl.review.body"></span>
+  <cite class="clearfix">-{{::reviewCtrl.review.author}}</cite>
+  <!-- '::' for one way databinding-->
 </blockquote>
 <h4>Submit a Review</h4>
 <fieldset class="form-group">
   <select class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars"
-  ng-model="reviewCtrl.review.stars" required>
+  ng-model="reviewCtrl.review.stars" required novalidate>
     <option value="">Rate the Product</option>
   </select>
 </fieldset>
 <fieldset class="form-group">
   <textarea class="form-control" placeholder="Write a short review of the product..."
-    title="Review" ng-model="reviewCtrl.review.body" required></textarea>
+    title="Review" ng-model="reviewCtrl.review.body"
+    ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
+    required novalidate></textarea>
 </fieldset>
 <fieldset class="form-group">
   <input type="email" class="form-control" placeholder="jimmyDean@example.org"
-  title="Email" ng-model="reviewCtrl.review.author" required/>
+  title="Email" ng-model="reviewCtrl.review.author" required novalidate/>
 </fieldset>
 <fieldset class="form-group">
   <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />

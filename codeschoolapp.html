@@ -7,11 +7,19 @@
   <link rel="stylesheet" href="css/csapp.css" media="screen" title="no title" charset="utf-8">
   <title>Flatlanders' Store</title>
 </head>
-<body ng-app="store" ng-controller="StoreController as store" >
-  <h1>{{"Welcome"}}</h1>
+<!-- ng-app starts the app manually, it can also be bootstraped via code -->
+<!-- ng-strict-di is good practice, forces all services to be properly annotated -->
+<!-- ng-controller sets a controller scope -->
+<!-- controller as sintax allow us to use alias and not needing the
+$parent to access upper level elements -->
+<!-- <body ng-app="store" ng-controller="StoreController as store"  ng-strict-di> -->
+<body ng-controller="StoreController as store">
+  <h1 ng-bind="'Welcome'"></h1>
+  <!-- ng bind is an alternative to {{}} with the added benefit of
+  not displaying the curly braces while angular loads-->
   <ul class="list-group">
     <li class="list-group-item" ng-repeat="product in store.products" ng-hide="product.soldOut">
-
+      <!-- Custom directives -->
       <h3>
         <product-title></product-title>
         <product-gallery></product-gallery>
