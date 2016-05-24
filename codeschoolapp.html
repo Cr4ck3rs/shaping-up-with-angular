@@ -14,11 +14,17 @@
 $parent to access upper level elements -->
 <!-- <body ng-app="store" ng-controller="StoreController as store"  ng-strict-di> -->
 <body ng-controller="StoreController as store">
-  <h1 ng-bind="'Welcome'"></h1>
+  <h1 ng-bind="'Welcome' | capitalize"></h1>
+
+  <h2> Filter: </h2>
+  <fieldset class="form-group">
+    <input type="text" class="form-control" title="Product" ng-model="store.search.title" required novalidate/>
+  </fieldset>
+
   <!-- ng bind is an alternative to {{}} with the added benefit of
   not displaying the curly braces while angular loads-->
   <ul class="list-group">
-    <li class="list-group-item" ng-repeat="product in store.products" ng-hide="product.soldOut">
+    <li class="list-group-item" ng-repeat="product in store.products | filter: store.search" ng-hide="product.soldOut">
       <!-- Custom directives -->
       <h3>
         <product-title></product-title>

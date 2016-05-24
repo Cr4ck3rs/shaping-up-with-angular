@@ -23,4 +23,10 @@
       vm.products = data;
     });
   }]);
+
+  store.filter('capitalize', function(){
+    return function (text) {
+      return text.toUpperCase();
+    };
+  });
 })();
