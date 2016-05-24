@@ -1,9 +1,8 @@
 <form name="reviewCtrl.reviewForm" ng-submit="reviewCtrl.reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
 <blockquote>
-  <strong>Stars: {{::reviewCtrl.review.stars}}</strong>
-  <span ng-bind="::reviewCtrl.review.body"></span>
-  <cite class="clearfix">-{{::reviewCtrl.review.author}}</cite>
-  <!-- '::' for one way databinding-->
+  <strong>Stars: {{reviewCtrl.review.stars}}</strong>
+  <span ng-bind="reviewCtrl.review.body"></span>
+  <cite class="clearfix">-{{reviewCtrl.review.author}}</cite>
 </blockquote>
 <h4>Submit a Review</h4>
 <fieldset class="form-group">
