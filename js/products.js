@@ -7,7 +7,7 @@
       restrict: 'E',
       templateUrl: "product-panels.html",
       scope: { "product" : "=" },
-      controller: function(){
+      /*controller: function(){
         this.tab = 1;
 
         this.selectTab = function(setTab) {
@@ -18,7 +18,7 @@
           return this.tab === checkTab;
         };
       },
-      controllerAs: "panel"
+      controllerAs: "panel"*/
     };
   });
 
