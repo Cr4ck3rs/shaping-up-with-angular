@@ -18,7 +18,7 @@
   tab.directive('tabset', function() {
     return {
       restrict : 'E',
-      tranclude : true,
+      transclude : true,
       scope: {
         type: '@'
       },
@@ -36,7 +36,7 @@
         else {
           self.classes['nav-tabs'] = true;
         }
-        
+
         self.addTab = function (tab){
           self.tabs.push(tab);
 
