@@ -23,15 +23,16 @@ $parent to access upper level elements -->
 
   <!-- ng bind is an alternative to {{}} with the added benefit of
   not displaying the curly braces while angular loads-->
+  <!-- you can chain filters with the | operator -->
   <ul class="list-group">
-    <li class="list-group-item" ng-repeat="product in store.products | filter: store.search" ng-hide="product.soldOut">
+    <li class="list-group-item" ng-repeat="product in store.products | filter: store.search | orderBy: '-price'" ng-hide="product.soldOut">
       <!-- Custom directives -->
       <h3>
-        <product-title></product-title>
-        <product-gallery></product-gallery>
+        <product-title product="product"></product-title>
+        <product-gallery product="product"></product-gallery>
       </h3>
 
-      <product-panels></product-panels>
+      <product-panels product="product"></product-panels>
     </li>
   </ul>
 

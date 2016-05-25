@@ -6,6 +6,7 @@
     return {
       restrict: 'E',
       templateUrl: "product-panels.html",
+      scope: { "product" : "=" },
       controller: function(){
         this.tab = 1;
 
@@ -24,6 +25,7 @@
   store.directive("productDescription", function(){
     return {
       restrict: 'E',
+      scope: { "product" : "=" },
       templateUrl: "product-description.html"
     };
   });
@@ -31,6 +33,7 @@
   store.directive("productSpecs", function(){
     return {
       restrict: 'E',
+      scope: { "product" : "=" },
       templateUrl: "product-specs.html"
     };
   });
@@ -38,6 +41,7 @@
   store.directive("productReviews", function(){
     return {
       restrict: 'E',
+      scope: { "product" : "=" },
       templateUrl: "product-reviews.html"
     };
   });
@@ -45,6 +49,7 @@
   store.directive("productReviewForm", function(){
     return {
       restrict: 'E',
+      scope: { "product" : "=" },
       templateUrl: "product-review-form.html",
       controller: function(){
         this.review = {};
@@ -63,6 +68,7 @@
   store.directive("productTitle", function(){
     return {
       restrict: 'E',
+      scope: { "product" : "=" },
       templateUrl: "product-title.html"
     };
   });
@@ -70,6 +76,7 @@
   store.directive("productGallery", function(){
     return {
       restrict: 'E',
+      scope: { "product" : "=" },
       templateUrl: "product-gallery.html",
       controller: function(){
         this.current = 0;
