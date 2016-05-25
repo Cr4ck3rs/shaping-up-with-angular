@@ -1,6 +1,6 @@
 
 (function(){
-  var store = angular.module('store-products', []);
+  var store = angular.module('store-products', ['tab']);
 
   store.directive("productPanels", function(){
     return {
