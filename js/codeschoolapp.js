@@ -17,7 +17,7 @@
   store.controller('StoreController', ['$http', function($http){
     var vm = this;
     vm.products = [];
-    vm.addToCart = function(product){
+    vm.addToCart = function(productObj){
       console.log("Aded a " + product.name + " product");
     };
 
