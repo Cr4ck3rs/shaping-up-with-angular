@@ -18,7 +18,7 @@
     var vm = this;
     vm.products = [];
     vm.addToCart = function(productObj){
-      console.log("Aded a " + product.name + " product");
+      console.log("Aded a " + productObj.name + " product");
     };
 
     //$http is an angular built in service
