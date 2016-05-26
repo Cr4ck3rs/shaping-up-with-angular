@@ -17,6 +17,9 @@
   store.controller('StoreController', ['$http', function($http){
     var vm = this;
     vm.products = [];
+    vm.addToCart = function(product){
+      console.log("Aded a " + product.name + " product");
+    };
 
     //$http is an angular built in service
     $http.get('json/products.json').success(function(data){

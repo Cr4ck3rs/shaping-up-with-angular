@@ -6,19 +6,7 @@
     return {
       restrict: 'E',
       templateUrl: "product-panels.html",
-      scope: { "product" : "=" },
-      /*controller: function(){
-        this.tab = 1;
-
-        this.selectTab = function(setTab) {
-          this.tab = setTab;
-        };
-
-        this.isSelected = function(checkTab){
-          return this.tab === checkTab;
-        };
-      },
-      controllerAs: "panel"*/
+      scope: { "product" : "=" }
     };
   });
 
@@ -68,7 +56,10 @@
   store.directive("productTitle", function(){
     return {
       restrict: 'E',
-      scope: { "product" : "=" },
+      scope: {
+        "product" : "=",
+        "addToCart": "&addtocart"
+      },
       templateUrl: "product-title.html"
     };
   });
