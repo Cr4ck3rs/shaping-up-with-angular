@@ -28,7 +28,7 @@ $parent to access upper level elements -->
     <li class="list-group-item" ng-repeat="product in store.products | filter: store.search | orderBy: '-price'" ng-hide="product.soldOut">
       <!-- Custom directives -->
       <h3>
-        <product-title product="product" addtocart="store.addToCart('product')"></product-title>
+        <product-title product="product" addtocart="store.addToCart(product)"></product-title>
         <product-gallery product="product"></product-gallery>
       </h3>
 
