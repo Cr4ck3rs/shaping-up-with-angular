@@ -6,8 +6,9 @@
 
       <a href=""
         role="tab"
-        ng-click="tabsett.select(tab)">{{tab.heading}}</a>
-    </li>
+        ng-click="tabsett.select(tab)"><i ng-class="tab.classes"></i> {{tab.heading}}</a>
+
+      </li>
   </ul>
 
   <ng-transclude>

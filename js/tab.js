@@ -11,6 +11,7 @@
       },
       link: function(scope, elem, attr, tabsetCtrl) {
         scope.active = false;
+        scope.glyphicon = attr.glyphicon;
         tabsetCtrl.addTab(scope);
       }
     };
@@ -39,9 +40,14 @@
 
         self.addTab = function (tab){
           self.tabs.push(tab);
+          tab.classes = {};
 
           if(self.tabs.length === 1) {
             tab.active = true;
+          }
+          if(tab.glyphicon !== undefined){
+            tab.classes['glyphicon'] = true;
+            tab.classes['glyphicon-' + tab.glyphicon] = true;
           }
         };
         self.select = function(selectedTab) {

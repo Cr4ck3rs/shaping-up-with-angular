@@ -14,9 +14,12 @@
 $parent to access upper level elements -->
 <!-- <body ng-app="store" ng-controller="StoreController as store"  ng-strict-di> -->
 <body ng-controller="StoreController as store">
+
+  <h1 class="text-danger" ng-cloak><i class="glyphicon glyphicon-shopping-cart"></i>{{store.addedProducts.length}}</h1>
+
   <h1 ng-bind="'Welcome' | capitalize"></h1>
 
-  <h2> Filter: </h2>
+  <h2><i class="text-primary glyphicon glyphicon-filter"></i> Filter: </h2>
   <fieldset class="form-group">
     <input type="text" class="form-control" title="Product" ng-model="store.search.name" novalidate/>
   </fieldset>
