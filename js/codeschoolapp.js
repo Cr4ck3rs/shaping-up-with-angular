@@ -17,8 +17,10 @@
   store.controller('StoreController', ['$http', function($http){
     var vm = this;
     vm.products = [];
+    vm.addedProducts = [];
     vm.addToCart = function(productObj){
       console.log("Aded a " + productObj.name + " product");
+      addedProducts.push(productObj);
     };
 
     //$http is an angular built in service
