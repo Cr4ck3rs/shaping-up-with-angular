@@ -1,0 +1,32 @@
+<form name="reviewCtrl.reviewForm"
+  data-ng-submit="reviewCtrl.reviewForm.$valid && reviewCtrl.addReview(product)"
+  novalidate>
+<blockquote>
+  <strong>Stars: {{reviewCtrl.review.stars}}</strong>
+  <span data-ng-bind="reviewCtrl.review.body"></span>
+  <cite class="clearfix">-{{reviewCtrl.review.author}}</cite>
+</blockquote>
+<h4>Submit a Review</h4>
+<fieldset class="form-group">
+  <select class="form-control" data-ng-options="stars for stars in [5,4,3,2,1]"  title="Stars"
+  data-ng-model="reviewCtrl.review.stars" required novalidate>
+    <option value="">Rate the Product</option>
+  </select>
+</fieldset>
+<fieldset class="form-group">
+  <textarea class="form-control" placeholder="Write a short review of the product..."
+    title="Review" data-ng-model="reviewCtrl.review.body"
+    data-ng-model-options="{ updateOn: 'default blur', debounce: { default: 500, blur: 0 } }"
+    required novalidate></textarea>
+</fieldset>
+<fieldset class="form-group">
+  <input type="email" class="form-control" placeholder="jimmyDean@example.org"
+  title="Email" data-ng-model="reviewCtrl.review.author" required novalidate/>
+</fieldset>
+<fieldset class="form-group">
+  <button type="submit" class="btn btn-primary pull-right">
+    <i class="glyphicon glyphicon-check"></i> Submit Review
+  </button>
+  <!-- <input type="submit" class="btn btn-primary pull-right" value="Submit Review" /> -->
+</fieldset>
+</form>

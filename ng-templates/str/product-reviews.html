@@ -1,0 +1,12 @@
+<h4>Reviews</h4>
+<li data-ng-repeat="review in product.reviews">
+<blockquote>
+  <strong>
+    <span data-ng-bind="::review.stars"/> Stars <i class="text-success glyphicon glyphicon-star"></i>
+  </strong>
+  <span data-ng-bind="::review.body"></span>
+  <cite class="clearfix">—{{::review.author}} on {{::review.createdOn | date}}</cite>
+  <!-- '::' for one way databinding-->
+</blockquote>
+</li>
+<str-product-review-form data-product="product"></str-product-review-form>

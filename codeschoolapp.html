@@ -13,31 +13,33 @@
 <!-- controller as sintax allow us to use alias and not needing the
 $parent to access upper level elements -->
 <!-- <body ng-app="store" ng-controller="StoreController as store"  ng-strict-di> -->
-<body ng-controller="StoreController as store">
+<body data-ng-controller="StoreController as storeCtrl">
 
-  <h1 class="text-danger" ng-show="store.addedProducts.length" ng-cloak>
-    <i class="glyphicon glyphicon-shopping-cart"></i>{{store.addedProducts.length}}
+  <h1 class="text-danger" data-ng-show="storeCtrl.addedProducts.length" data-ng-cloak>
+    <i class="glyphicon glyphicon-shopping-cart"></i>{{storeCtrl.addedProducts.length}}
   </h1>
 
-  <h1 ng-bind="'Welcome' | capitalize"></h1>
+  <h1 data-ng-bind="'Welcome' | capitalize"></h1>
 
   <h2><i class="text-primary glyphicon glyphicon-filter"></i> Filter: </h2>
   <fieldset class="form-group">
-    <input type="text" class="form-control" title="Product" ng-model="store.search.name" novalidate/>
+    <input type="text" class="form-control" title="Product" data-ng-model="storeCtrl.search.name" novalidate/>
   </fieldset>
 
   <!-- ng bind is an alternative to {{}} with the added benefit of
   not displaying the curly braces while angular loads-->
   <!-- you can chain filters with the | operator -->
   <ul class="list-group">
-    <li class="list-group-item" ng-repeat="product in store.products | filter: store.search | orderBy: '-price'" ng-hide="product.soldOut">
+    <li class="list-group-item"
+      data-ng-repeat="product in storeCtrl.products | filter: storeCtrl.search | orderBy: '-price'"
+      data-ng-hide="product.soldOut">
       <!-- Custom directives -->
       <h3>
-        <product-title product="product" addtocart="store.addToCart(productObj)"></product-title>
-        <product-gallery product="product"></product-gallery>
+        <str-product-title data-product="product" data-addtocart="storeCtrl.addToCart(productObj)"></str-product-title>
+        <str-product-gallery data-product="product"></str-product-gallery>
       </h3>
 
-      <product-panels product="product"></product-panels>
+      <str-product-panels data-product="product"></str-product-panels>
     </li>
   </ul>
 

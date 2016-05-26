@@ -1,11 +1,11 @@
 (function(){
   var tab = angular.module('tab', []);
-  tab.directive('tab', function(){
+  tab.directive('tbTab', function(){
     return {
       restrict: 'E',
       transclude: true,
-      templateUrl: 'tab.html',
-      require: '^tabset',
+      templateUrl: 'ng-templates/tb/tab.html',
+      require: '^^tbTabset',
       scope: {
         heading: '@'
       },
@@ -16,16 +16,16 @@
       }
     };
   });
-  tab.directive('tabset', function() {
+  tab.directive('tbTabset', function() {
     return {
       restrict : 'E',
       transclude : true,
       scope: {
         type: '@'
       },
-      templateUrl: 'tabset.html',
+      templateUrl: 'ng-templates/tb/tabset.html',
       bindToController: true,
-      controllerAs: 'tabsett',
+      controllerAs: 'tabsetCtrl',
       controller: function() {
         var self = this;
         self.tabs = [];
@@ -45,7 +45,7 @@
           if(self.tabs.length === 1) {
             tab.active = true;
           }
-          if(tab.glyphicon !== undefined){
+          if(!angular.isUndefined(tab.glyphicon)){
             tab.classes['glyphicon'] = true;
             tab.classes['glyphicon-' + tab.glyphicon] = true;
           }

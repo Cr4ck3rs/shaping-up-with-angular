@@ -2,43 +2,43 @@
 (function(){
   var store = angular.module('store-products', ['tab']);
 
-  store.directive("productPanels", function(){
+  store.directive("strProductPanels", function(){
     return {
       restrict: 'E',
-      templateUrl: "product-panels.html",
+      templateUrl: "ng-templates/str/product-panels.html",
       scope: { "product" : "=" }
     };
   });
 
-  store.directive("productDescription", function(){
+  store.directive("strProductDescription", function(){
     return {
       restrict: 'E',
       scope: { "product" : "=" },
-      templateUrl: "product-description.html"
+      templateUrl: "ng-templates/str/product-description.html"
     };
   });
 
-  store.directive("productSpecs", function(){
+  store.directive("strProductSpecs", function(){
     return {
       restrict: 'E',
       scope: { "product" : "=" },
-      templateUrl: "product-specs.html"
+      templateUrl: "ng-templates/str/product-specs.html"
     };
   });
 
-  store.directive("productReviews", function(){
+  store.directive("strProductReviews", function(){
     return {
       restrict: 'E',
       scope: { "product" : "=" },
-      templateUrl: "product-reviews.html"
+      templateUrl: "ng-templates/str/product-reviews.html"
     };
   });
 
-  store.directive("productReviewForm", function(){
+  store.directive("strProductReviewForm", function(){
     return {
       restrict: 'E',
       scope: { "product" : "=" },
-      templateUrl: "product-review-form.html",
+      templateUrl: "ng-templates/str/product-review-form.html",
       controller: function(){
         this.review = {};
 
@@ -53,29 +53,29 @@
     };
   });
 
-  store.directive("productTitle", function(){
+  store.directive("strProductTitle", function(){
     return {
       restrict: 'E',
       scope: {
         "product" : "=",
         "addToCart": "&addtocart"
       },
-      templateUrl: "product-title.html"
+      templateUrl: "ng-templates/str/product-title.html"
     };
   });
 
-  store.directive("productGallery", function(){
+  store.directive("strProductGallery", function(){
     return {
       restrict: 'E',
       scope: { "product" : "=" },
-      templateUrl: "product-gallery.html",
+      templateUrl: "ng-templates/str/product-gallery.html",
       controller: function(){
         this.current = 0;
         this.setCurrent = function(newGallery){
           this.current = newGallery || 0;
         };
       },
-      controllerAs: "gallery"
+      controllerAs: "galleryCtrl"
     };
   });
 })();
