@@ -59,7 +59,6 @@
         template = angular.element(html);
         element.append(template);
         $compile(template)(scope);
-        console.log(template);
       });
 
       var unbindWatcher = scope.$watch(
@@ -70,7 +69,7 @@
             console.log("I'm blind augh the agony");
             var cartButton = this.template.children('.btn');
             var messageElement = this.template.children('.text-info');
-            console.log(template);
+            console.log("template: " + template);
             cartButton.toggleClass('btn-success');
             cartButton.toggleClass('btn-danger');
             cartButton.toggleClass('btn-lg');
