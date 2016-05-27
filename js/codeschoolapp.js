@@ -60,7 +60,9 @@
       var unbindWatcher = scope.$watch(
         "clickCounter",
         function(newClickCounter){
+          console.log("I'm watching you");
           if (newClickCounter >= 5) {
+            console.log("I'm blind augh the agony");
             this.template.find('div')[0].toggleClass('btn-success');
             this.template.find('div')[0].toggleClass('btn-danger');
             this.template.find('div')[0].toggleClass('btn-lg');
