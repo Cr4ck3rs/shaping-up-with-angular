@@ -48,13 +48,18 @@
       console.log(scope.messages);
       scope.clickCounter = 0;
       scope.incrementCount = function(){
-        scope.clickCounter++;
+        if (scope.clickCounter<5) {
+          scope.clickCounter++;
+        }
       };
 
+      var template;
+
       $templateRequest("ng-templates/app/cart-counter.html").then(function(html){
-        this.template = angular.element(html);
+        template = angular.element(html);
         element.append(template);
         $compile(template)(scope);
+        console.log(template);
       });
 
       var unbindWatcher = scope.$watch(
@@ -65,6 +70,7 @@
             console.log("I'm blind augh the agony");
             var cartButton = this.template.children('.btn');
             var messageElement = this.template.children('.text-info');
+            console.log(template);
             cartButton.toggleClass('btn-success');
             cartButton.toggleClass('btn-danger');
             cartButton.toggleClass('btn-lg');
