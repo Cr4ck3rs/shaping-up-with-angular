@@ -60,17 +60,19 @@
       var unbindWatcher = scope.$watch(
         "clickCounter",
         function(newClickCounter){
-          console.log("I'm watching you");
+          console.log("I've been watching you... alalalong");
           if (newClickCounter >= 5) {
             console.log("I'm blind augh the agony");
-            this.template.find('div')[0].toggleClass('btn-success');
-            this.template.find('div')[0].toggleClass('btn-danger');
-            this.template.find('div')[0].toggleClass('btn-lg');
+            var cartButton = this.template.children('.btn');
+            var messageElement = this.template.children('.text-info');
+            carButton.toggleClass('btn-success');
+            carButton.toggleClass('btn-danger');
+            carButton.toggleClass('btn-lg');
 
-            this.template.find('p')[0].toggleClass('text-info');
-            this.template.find('p')[0].toggleClass('text-danger');
-            this.template.find('p')[0].toggleClass('text-capitalize');
-            this.template.find('p')[0].toggleClass('lead');
+            messageElement.toggleClass('text-info');
+            messageElement.toggleClass('text-danger');
+            messageElement.toggleClass('text-capitalize');
+            messageElement.toggleClass('lead');
 
             unbindWatcher();
           }
