@@ -15,9 +15,7 @@ $parent to access upper level elements -->
 <!-- <body ng-app="store" ng-controller="StoreController as store"  ng-strict-di> -->
 <body data-ng-controller="StoreController as storeCtrl">
 
-  <h1 class="text-danger" data-ng-show="storeCtrl.addedProducts.length" data-ng-cloak>
-    <i class="glyphicon glyphicon-shopping-cart"></i>{{storeCtrl.addedProducts.length}}
-  </h1>
+  <app-cart-counter data-added-products="storeCtrl.addedProducts"></app-cart-counter>
 
   <h1 data-ng-bind="'Welcome' | capitalize"></h1>
 

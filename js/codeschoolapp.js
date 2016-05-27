@@ -34,4 +34,56 @@
       return text.toUpperCase();
     };
   });
+
+  store.directive("appCartCounter", ['$templateRequest', '$compile', function($templateRequest, $compile){
+    var link = function(scope, element){
+      this.messages = [
+        "Sorry, the shopping cart is not implemented",
+        "Hey, I told you, it's not ready",
+        "Stop that! It's anoying",
+        "I'm getting really really angry",
+        "YEarghhh!!!!"
+      ];
+
+      scope.messages = this.messsages;
+      scope.clickCounter = 0;
+      scope.incrementCount = function(){
+        scope.clickCounter++;
+      };
+
+      $templateRequest("ng-templates/app/cart-counter.html").then(function(html){
+        this.template = angular.element(html);
+        element.append(template);
+        $compile(template)(scope);
+      });
+
+      var unbindWatcher = scope.$watch(
+        "clickCounter",
+        function(newClickCounter){
+          if (newClickCounter >= 5) {
+            this.template.find('div')[0].toggleClass('btn-success');
+            this.template.find('div')[0].toggleClass('btn-danger');
+            this.template.find('div')[0].toggleClass('btn-lg');
+
+            this.template.find('p')[0].toggleClass('text-info');
+            this.template.find('p')[0].toggleClass('text-danger');
+            this.template.find('p')[0].toggleClass('text-capitalize');
+            this.template.find('p')[0].toggleClass('lead');
+
+            unbindWatcher();
+          }
+        }
+      );
+
+    };
+
+    return {
+      restrict: 'E',
+      scope: {
+        'addedProducts' : '='
+      },
+      replace: 'true',
+      link: link
+    };
+  }]);
 })();
