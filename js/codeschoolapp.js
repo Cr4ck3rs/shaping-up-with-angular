@@ -65,9 +65,9 @@
             console.log("I'm blind augh the agony");
             var cartButton = this.template.children('.btn');
             var messageElement = this.template.children('.text-info');
-            carButton.toggleClass('btn-success');
-            carButton.toggleClass('btn-danger');
-            carButton.toggleClass('btn-lg');
+            cartButton.toggleClass('btn-success');
+            cartButton.toggleClass('btn-danger');
+            cartButton.toggleClass('btn-lg');
 
             messageElement.toggleClass('text-info');
             messageElement.toggleClass('text-danger');
