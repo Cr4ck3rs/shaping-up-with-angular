@@ -36,16 +36,16 @@
   });
 
   store.directive("appCartCounter", ['$templateRequest', '$compile', function($templateRequest, $compile){
+    var cartMessages = [
+      "Sorry, the shopping cart is not implemented",
+      "Hey, I told you, it's not ready",
+      "Stop that! It's anoying",
+      "I'm getting really really angry",
+      "YEarghhh!!!!"
+    ];
     var link = function(scope, element){
-      this.messages = [
-        "Sorry, the shopping cart is not implemented",
-        "Hey, I told you, it's not ready",
-        "Stop that! It's anoying",
-        "I'm getting really really angry",
-        "YEarghhh!!!!"
-      ];
-
-      scope.messages = this.messsages;
+      scope.messages = cartMessages;
+      console.log(scope.messages);
       scope.clickCounter = 0;
       scope.incrementCount = function(){
         scope.clickCounter++;
