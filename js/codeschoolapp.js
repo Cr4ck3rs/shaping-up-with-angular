@@ -64,8 +64,8 @@
           console.log("I've been watching you... alalalong");
           if (newClickCounter >= 5) {
             console.log("I'm blind augh the agony");
-            var cartButton = scope.template.children(1);
-            var messageElement = scope.template.children(2);
+            var cartButton = scope.template(0);
+            var messageElement = scope.template(1);
             console.log(cartButton);
             console.log(messageElement);
             console.log(JSON.parse(JSON.stringify(scope.template)));
