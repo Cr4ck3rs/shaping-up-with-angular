@@ -45,7 +45,6 @@
     ];
     var link = function(scope, element){
       scope.messages = cartMessages;
-      console.log(scope.messages);
       scope.clickCounter = 0;
       scope.incrementCount = function(){
         if (scope.clickCounter<5) {
@@ -63,11 +62,13 @@
         "clickCounter",
         function(newClickCounter){
           console.log("I've been watching you... alalalong");
-          console.log("template: " + scope.template);
           if (newClickCounter >= 5) {
             console.log("I'm blind augh the agony");
-            var cartButton = scope.template.children('.btn');
-            var messageElement = scope.template.children('.text-info');
+            var cartButton = scope.template.children(1);
+            var messageElement = scope.template.children(2);
+            console.log(cartButton);
+            console.log(messageElement);
+            console.log(JSON.parse(JSON.stringify(scope.template)));
 
             cartButton.toggleClass('btn-success');
             cartButton.toggleClass('btn-danger');
