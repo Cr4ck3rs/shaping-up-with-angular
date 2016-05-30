@@ -61,14 +61,11 @@
       var unbindWatcher = scope.$watch(
         "clickCounter",
         function(newClickCounter){
-          console.log("I've been watching you... alalalong");
           if (newClickCounter >= 5) {
-            console.log("I'm blind augh the agony");
-            var cartButton = scope.template.find('button');
-            var messageElement = scope.template.find('p');
+            var cartButton = scope.template.children(0);
+            var messageElement = scope.template.children(1);
             console.log(cartButton);
             console.log(messageElement);
-            console.log(JSON.parse(JSON.stringify(scope.template)));
 
             cartButton.toggleClass('btn-success');
             cartButton.toggleClass('btn-danger');
