@@ -53,23 +53,22 @@
         }
       };
 
-      var template;
-
       $templateRequest("ng-templates/app/cart-counter.html").then(function(html){
-        template = angular.element(html);
-        element.append(template);
-        $compile(template)(scope);
+        scope.template = angular.element(html);
+        element.append(scope.template);
+        $compile(scope.template)(scope);
       });
 
       var unbindWatcher = scope.$watch(
         "clickCounter",
         function(newClickCounter){
           console.log("I've been watching you... alalalong");
+          console.log("template: " + scope.template);
           if (newClickCounter >= 5) {
             console.log("I'm blind augh the agony");
-            var cartButton = this.template.children('.btn');
-            var messageElement = this.template.children('.text-info');
-            console.log("template: " + template);
+            var cartButton = scope.template.children('.btn');
+            var messageElement = scope.template.children('.text-info');
+
             cartButton.toggleClass('btn-success');
             cartButton.toggleClass('btn-danger');
             cartButton.toggleClass('btn-lg');
