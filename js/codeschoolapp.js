@@ -62,12 +62,10 @@
         "clickCounter",
         function(newClickCounter){
           if (newClickCounter >= 5) {
-            var cartButton = scope.template.children()[0];
-            var messageElement = scope.template.children()[1];
+            var cartButton = scope.template[0];
+            var messageElement = scope.template[1];
             console.log(cartButton);
             console.log(messageElement);
-            console.log(scope.template.children()(0));
-            console.log(scope.template.children()(1));
 
             cartButton.toggleClass('btn-success');
             cartButton.toggleClass('btn-danger');
