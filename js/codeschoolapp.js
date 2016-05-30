@@ -62,13 +62,10 @@
         "clickCounter",
         function(newClickCounter){
           if (newClickCounter >= 5) {
-            var cartButton = scope.template.find('.btn');
-            var messageElement = scope.template.find('.text-info');
+            var cartButton = angular.element(scope.template[0]);
+            var messageElement = angular.element(scope.template[2]);
             console.log(cartButton);
             console.log(messageElement);
-
-            console.log(scope.template.find('.btn'));
-            console.log(scope.template.find('.text-info'));
 
             cartButton.toggleClass('btn-success');
             cartButton.toggleClass('btn-danger');
@@ -80,8 +77,6 @@
             messageElement.toggleClass('lead');
 
             unbindWatcher();
-            console.log(scope.template(0));
-            console.log(scope.template(2));
           }
         }
       );
