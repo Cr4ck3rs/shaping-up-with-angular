@@ -18,7 +18,7 @@
   opacity: 0;
 }
 
-.cart-button.ng-show{
+.cart-button, .wip-message{
   opacity: 1;
 }
 
