@@ -5,3 +5,14 @@
 .ng-valid.ng-dirty{
   border-color: #78FA89;
 }
+
+.wip-message, .cart-button{
+  transition:all linear 0.5s;
+  -webkit-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+}
+
+.wip-message.ng-hide, .cart-button.ng-hide{
+  opacity: 0;
+}

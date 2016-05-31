@@ -1,10 +1,10 @@
 <button
-  class="btn btn-success"
+  class="cart-button btn btn-success"
   data-ng-show="addedProducts.length"
   data-ng-click="incrementCount()"
   data-ng-cloak>
   <i class="glyphicon glyphicon-shopping-cart"></i> {{addedProducts.length}}
 </button>
-<p data-ng-show="clickCounter" class="text-info">
+<p data-ng-show="clickCounter" class="wip-message text-info">
   {{messages[clickCounter-1]}}
 </p>
