@@ -15,71 +15,22 @@ div.img-wrap > img {
 }
 
 .cart-button.ng-hide-remove {
-  transition: all linear 0.5s;
-  -webkit-transition: all linear 0.5s;
-  -o-transition: all linear 0.5s;
-  -moz-transition: all linear 0.5s;
-  opacity: 0;
+  transition: all linear 1.5s;
+  -webkit-transition: all linear 1.5s;
+  -o-transition: all linear 1.5s;
+  -moz-transition: all linear 1.5s;
+  opacity: 1;
 }
 
 .cart-button,
 .wip-message {
-  opacity: 1;
-}
-
-.wip-message.ng-hide-remove {
   opacity: 0;
-  -webkit-animation: 0.5s hide;
-  -moz-animation: 0.5s hide;
-  animation: 0.5s hide;
-}
-
-@keyframes hide {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.02);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-}
-
-@-webkit-keyframes hide {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.02);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-}
-
-@-moz-keyframes hide {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.02);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
 }
 
 .wip-message.ng-hide-remove {
-  -webkit-animation: 0.3s show;
-  -moz-animation: 0.5s show;
-  animation: 0.3s show;
+  -webkit-animation: 1.5s show;
+  -moz-animation: 1.5s show;
+  animation: 1.5s show;
 }
 
 @keyframes show {
