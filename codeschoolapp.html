@@ -15,31 +15,33 @@ $parent to access upper level elements -->
 <!-- <body ng-app="store" ng-controller="StoreController as store"  ng-strict-di> -->
 <body data-ng-controller="StoreController as storeCtrl">
 
-  <app-cart-counter data-added-products="storeCtrl.addedProducts"></app-cart-counter>
+  <div class="container">
+    <app-cart-counter data-added-products="storeCtrl.addedProducts"></app-cart-counter>
 
-  <h1 data-ng-bind="'Welcome' | capitalize"></h1>
+    <h1 data-ng-bind="'Welcome' | capitalize"></h1>
 
-  <h2><i class="text-primary glyphicon glyphicon-filter"></i> Filter: </h2>
-  <fieldset class="form-group">
-    <input type="text" class="form-control" title="Product" data-ng-model="storeCtrl.search.name" novalidate/>
-  </fieldset>
+    <h2><i class="text-primary glyphicon glyphicon-filter"></i> Filter: </h2>
+    <fieldset class="form-group">
+      <input type="text" class="form-control" title="Product" data-ng-model="storeCtrl.search.name" novalidate/>
+    </fieldset>
 
-  <!-- ng bind is an alternative to {{}} with the added benefit of
-  not displaying the curly braces while angular loads-->
-  <!-- you can chain filters with the | operator -->
-  <ul class="list-group">
-    <li class="list-group-item"
-      data-ng-repeat="product in storeCtrl.products | filter: storeCtrl.search | orderBy: '-price'"
-      data-ng-hide="product.soldOut">
-      <!-- Custom directives -->
-      <h3>
-        <str-product-title data-product="product" data-addtocart="storeCtrl.addToCart(productObj)"></str-product-title>
-        <str-product-gallery data-product="product"></str-product-gallery>
-      </h3>
+    <!-- ng bind is an alternative to {{}} with the added benefit of
+    not displaying the curly braces while angular loads-->
+    <!-- you can chain filters with the | operator -->
+    <ul class="list-group">
+      <li class="list-group-item"
+        data-ng-repeat="product in storeCtrl.products | filter: storeCtrl.search | orderBy: '-price'"
+        data-ng-hide="product.soldOut">
+        <!-- Custom directives -->
+        <h3>
+          <str-product-title data-product="product" data-addtocart="storeCtrl.addToCart(productObj)"></str-product-title>
+          <str-product-gallery data-product="product"></str-product-gallery>
+        </h3>
 
-      <str-product-panels data-product="product"></str-product-panels>
-    </li>
-  </ul>
+        <str-product-panels data-product="product"></str-product-panels>
+      </li>
+    </ul>
+  </div>
 
   <!-- Imports -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
@@ -47,7 +49,7 @@ $parent to access upper level elements -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"
    charset="utf-8">
   </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-animate.js"
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.Y.Z/angular-animate.js"
    charset="utf-8"></script>
   <!-- Local Files-->
   <script type="text/javascript" src="js/codeschoolapp.js" charset="utf-8"></script>
