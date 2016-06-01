@@ -6,10 +6,6 @@
   border-color: #78FA89;
 }
 
-.cart-button{
-
-}
-
 .cart-button.ng-hide{
   transition:all linear 0.5s;
   -webkit-transition:all linear 0.5s;
@@ -18,11 +14,14 @@
   opacity: 0;
 }
 
-.cart-button, .wip-message{
+.cart-button{
   opacity: 1;
 }
 
-.wip-message.ng-hide-add{
+.wip-message{
+  opacity: 1;
+}
+.wip-message.ng-hide-remove{
   opacity: 0;
   -webkit-animation:0.5s hide;
   -moz-animation:0.5s hide;
