@@ -22,10 +22,7 @@ div.img-wrap > img {
   opacity: 0;
 }
 
-.cart-button {
-  opacity: 1;
-}
-
+.cart-button,
 .wip-message {
   opacity: 1;
 }
