@@ -14,7 +14,7 @@ div.img-wrap > img {
   max-width: 400px;
 }
 
-.cart-button.ng-hide {
+.cart-button.ng-hide-remove {
   transition: all linear 0.5s;
   -webkit-transition: all linear 0.5s;
   -o-transition: all linear 0.5s;
