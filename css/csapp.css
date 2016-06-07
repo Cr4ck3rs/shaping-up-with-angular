@@ -19,7 +19,6 @@ div.img-wrap > img {
   -webkit-transition: all linear 1.5s;
   -o-transition: all linear 1.5s;
   -moz-transition: all linear 1.5s;
-  opacity: 0;
 }
 
 .cart-button,
@@ -28,40 +27,10 @@ div.img-wrap > img {
 }
 
 .wip-message.ng-hide-remove {
-  -webkit-animation: 1.5s show;
-  -moz-animation: 1.5s show;
   animation: 1.5s show;
 }
 
 @keyframes show {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  70% {
-    transform: scale(1.02);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@-webkit-keyframes show {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  70% {
-    transform: scale(1.02);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@-moz-keyframes show {
   0% {
     opacity: 0;
     transform: scale(0.5);
